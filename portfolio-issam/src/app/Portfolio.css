@@ -1,0 +1,11 @@
+.photo {
+  width: 15rem;
+  height: 16rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.section-principale {
+  display: flex;
+  align-items: center;
+  gap: 3rem; /* espace entre texte et image */
+}
