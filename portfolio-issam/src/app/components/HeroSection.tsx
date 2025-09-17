@@ -173,82 +173,86 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
       </section>
-<section id="experience" className={sectionClasses}>
-  <h2 className="text-5xl font-bold mb-12">Expériences professionnelles</h2>
+<section id="experience" className="py-20 bg-gradient-to-b from-black to-gray-900 text-white">
+  <h2 className="text-5xl font-bold text-center mb-16">Expériences professionnelles</h2>
+  <div className="relative max-w-6xl mx-auto px-4 space-y-12">
 
-  <div className="relative w-full max-w-5xl mx-auto text-white">
-    {/* Ligne verticale centrale */}
-    <div className="absolute left-1/2 top-0 transform -translate-x-1/2 h-full w-1 bg-gray-600"></div>
-
-    {/* Safran - gauche */}
-    <div className="mb-16 flex md:justify-end relative">
-      <div className="md:w-1/2 pr-12 text-right animate-slideLeft">
-        <p className="text-indigo-400 font-semibold">Safran Aircraft Engines (Gennevilliers)</p>
-        <p className="text-gray-300 text-sm">Févr. – Août 2025</p>
-        <ul className="mt-2 text-gray-200 list-disc list-inside space-y-1">
-          <li>Mise en place d’un système automatisé pour la génération des plans de contrôle.</li>
-          <li>Création d’une liaison entre rapports de contrôle dimensionnel et modèles 3D.</li>
-          <li>Support informatique aux difficultés rencontrées.</li>
-          <li>Développement d’un modèle de machine learning.</li>
-        </ul>
+    {[
+      {
+        company: "Safran Aircraft Engines (Gennevilliers)",
+        period: "Févr. – Août 2025",
+        tasks: [
+          "Mise en place d’un système automatisé pour la génération des plans de contrôle.",
+          "Création d’une liaison entre rapports de contrôle dimensionnel et modèles 3D.",
+          "Support informatique aux difficultés rencontrées.",
+          "Développement d’un modèle de machine learning."
+        ],
+        side: "left"
+      },
+      {
+        company: "Jesa - Jacobs Engineering (Rabat)",
+        period: "Juil. – Sept. 2024",
+        tasks: [
+          "Étude et dimensionnement des lots CVC.",
+          "Proposition de solutions pour réduire les coûts.",
+          "Dimensionnement des réservoirs incendie.",
+          "Réalisation du dossier d’achat et sélection technique."
+        ],
+        side: "right"
+      },
+      {
+        company: "Exprom Facilities (Rabat)",
+        period: "Juil. – Sept. 2023",
+        tasks: [
+          "Optimisation de la maintenance CVC par AMDEC.",
+          "Mise en place d’une GMAO pour les systèmes CVC."
+        ],
+        side: "left"
+      },
+      {
+        company: "Les Conserves de Meknès – Usine OLEA FOOD",
+        period: "Juil. – Sept. 2022",
+        tasks: [
+          "Optimisation de la chaudière à fioul.",
+          "Dimensionnement d’une installation photovoltaïque."
+        ],
+        side: "right"
+      },
+      {
+        company: "BrickPack Company (Meknès)",
+        period: "Juil. – Août 2021",
+        tasks: [
+          "Dimensionnement des installations électriques domestiques."
+        ],
+        side: "left"
+      }
+    ].map((exp, idx) => (
+      <div
+        key={idx}
+        className={`md:flex md:items-center relative ${
+          exp.side === "left" ? "md:justify-start" : "md:justify-end"
+        }`}
+      >
+        <div
+          className={`bg-gray-800 p-6 rounded-xl shadow-lg md:w-1/2 ${
+            exp.side === "left" ? "md:mr-12 text-left" : "md:ml-12 text-right"
+          } animate-fadeIn`}
+        >
+          <p className="font-semibold">{exp.company}</p>
+          <p className="text-gray-400 text-sm mb-4">{exp.period}</p>
+          <ul className="list-disc list-inside space-y-1 text-gray-200">
+            {exp.tasks.map((task, tIdx) => (
+              <li key={tIdx}>{task}</li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div className="w-8 h-8 bg-indigo-400 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2 top-2 z-10"></div>
-    </div>
-
-    {/* Jesa - droite */}
-    <div className="mb-16 flex md:justify-start relative">
-      <div className="md:w-1/2 pl-12 text-left animate-slideRight">
-        <p className="text-indigo-400 font-semibold">Jesa - Jacobs Engineering (Rabat)</p>
-        <p className="text-gray-300 text-sm">Juil. – Sept. 2024</p>
-        <ul className="mt-2 text-gray-200 list-disc list-inside space-y-1">
-          <li>Étude et dimensionnement des lots CVC.</li>
-          <li>Proposition de solutions pour réduire les coûts.</li>
-          <li>Dimensionnement des réservoirs incendie.</li>
-          <li>Réalisation du dossier d’achat et sélection technique.</li>
-        </ul>
-      </div>
-      <div className="w-8 h-8 bg-indigo-400 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2 top-2 z-10"></div>
-    </div>
-
-    {/* Exprom - gauche */}
-    <div className="mb-16 flex md:justify-end relative">
-      <div className="md:w-1/2 pr-12 text-right animate-slideLeft">
-        <p className="text-indigo-400 font-semibold">Exprom Facilities (Rabat)</p>
-        <p className="text-gray-300 text-sm">Juil. – Sept. 2023</p>
-        <ul className="mt-2 text-gray-200 list-disc list-inside space-y-1">
-          <li>Optimisation de la maintenance CVC par AMDEC.</li>
-          <li>Mise en place d’une GMAO pour les systèmes CVC.</li>
-        </ul>
-      </div>
-      <div className="w-8 h-8 bg-indigo-400 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2 top-2 z-10"></div>
-    </div>
-
-    {/* OLEA FOOD - droite */}
-    <div className="mb-16 flex md:justify-start relative">
-      <div className="md:w-1/2 pl-12 text-left animate-slideRight">
-        <p className="text-indigo-400 font-semibold">Les Conserves de Meknès – Usine OLEA FOOD</p>
-        <p className="text-gray-300 text-sm">Juil. – Sept. 2022</p>
-        <ul className="mt-2 text-gray-200 list-disc list-inside space-y-1">
-          <li>Optimisation de la chaudière à fioul.</li>
-          <li>Dimensionnement d’une installation photovoltaïque.</li>
-        </ul>
-      </div>
-      <div className="w-8 h-8 bg-indigo-400 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2 top-2 z-10"></div>
-    </div>
-
-    {/* BrickPack - gauche */}
-    <div className="mb-16 flex md:justify-end relative">
-      <div className="md:w-1/2 pr-12 text-right animate-slideLeft">
-        <p className="text-indigo-400 font-semibold">BrickPack Company (Meknès)</p>
-        <p className="text-gray-300 text-sm">Juil. – Août 2021</p>
-        <ul className="mt-2 text-gray-200 list-disc list-inside space-y-1">
-          <li>Dimensionnement des installations électriques domestiques.</li>
-        </ul>
-      </div>
-      <div className="w-8 h-8 bg-indigo-400 rounded-full border-2 border-white absolute left-1/2 transform -translate-x-1/2 top-2 z-10"></div>
-    </div>
+    ))}
   </div>
 </section>
+
+
+
 
       {/* Section Expérience */}
       {/* ...tu peux garder ton code existant pour les expériences... */}
