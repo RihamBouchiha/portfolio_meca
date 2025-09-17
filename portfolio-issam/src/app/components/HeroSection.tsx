@@ -96,6 +96,9 @@ const HeroSection: React.FC = () => {
         <button onClick={() => handleScroll("experience")} className="hover:text-indigo-400 transition-colors">
           Expérience
         </button>
+        <button onClick={() => handleScroll("plus")} className="hover:text-indigo-400 transition-colors">
+          Plus d'infos
+        </button>
         <button onClick={() => handleScroll("contact")} className="hover:text-indigo-400 transition-colors">
           Contact
         </button>
@@ -246,13 +249,27 @@ const HeroSection: React.FC = () => {
 </section>
 
 
+     <section className={sectionClasses} id="plus">
+        <h2 className="text-5xl font-bold mb-8">Plus d&apos;infos</h2>
+        <p className="text-lg text-gray-300 max-w-2xl mb-6">
+          Pour plus d&apos;informations détaillées sur mon parcours, vous pouvez télécharger mon CV ainsi que mon portfolio complet au format PDF :
+        </p>
+        <a
+          href="/cv.pdf"
+          download
+          className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition"
+        >
+          📄 Télécharger le CV
+        </a>
+      </section>
+
       {/* Section Contact */}
       <section className={sectionClasses} id="contact">
+        <h2 className="text-5xl font-bold mb-8">Contact</h2>
         <p className="text-lg text-gray-300 max-w-3xl leading-relaxed">
           Contactez-moi via email ou téléphone...
         </p>
       </section>
-      
     </div>
   );
 };
