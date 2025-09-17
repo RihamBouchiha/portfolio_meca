@@ -255,21 +255,51 @@ const HeroSection: React.FC = () => {
           Pour plus d&apos;informations détaillées sur mon parcours, vous pouvez télécharger mon CV ainsi que mon portfolio complet au format PDF :
         </p>
         <a
-          href="/cv.pdf"
-          download
-          className="inline-block px-8 py-3 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700 transition"
-        >
-          📄 Télécharger le CV
-        </a>
+  href="/cv.pdf"
+  download
+  className="inline-block px-8 py-3 text-white rounded-lg shadow-md hover:opacity-90 transition"
+  style={{ backgroundColor: "rgba(143, 139, 126, 1.00)" }}
+>
+  📄 Télécharger le CV
+</a>
+
       </section>
 
-      {/* Section Contact */}
-      <section className={sectionClasses} id="contact">
-        <h2 className="text-5xl font-bold mb-8">Contact</h2>
-        <p className="text-lg text-gray-300 max-w-3xl leading-relaxed">
-          Contactez-moi via email ou téléphone...
-        </p>
-      </section>
+      <section id="contact" className="py-20 bg-gray-900 text-white">
+  <div className="max-w-5xl mx-auto px-6">
+    <h2 className="text-4xl font-bold text-center mb-12">Contact</h2>
+
+    <div className="space-y-6 text-lg text-gray-300">
+      <p>
+        <span className="font-semibold">Adresse :</span> 171, boulevard de Valmy BP 31, 92702 Colombes Cedex
+      </p>
+      <p>
+        <span className="font-semibold">Email :</span>{" "}
+        <a href="mailto:oufadelissam@gmail.com" className="text-blue-400 hover:underline">
+          oufadelissam@gmail.com
+        </a>
+      </p>
+      <p>
+        <span className="font-semibold">Téléphone :</span>{" "}
+        <a href="tel:+33611176429" className="text-blue-400 hover:underline">
+          06 11 17 64 29
+        </a>
+      </p>
+      <p>
+        <span className="font-semibold">LinkedIn :</span>{" "}
+        <a
+          href="https://www.linkedin.com/in/issam-oufadel-8b8592212"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:underline"
+        >
+          linkedin.com/in/issam-oufadel-8b8592212
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
