@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
   // Parallax simple pour le background
   const { scrollY } = useScroll();
   const yBackground = useTransform(scrollY, [0, 1000], [0, 300]);
-
+ 
   // --- Animation des particules (Responsive & Optimisée) ---
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -225,7 +225,7 @@ const HeroSection: React.FC = () => {
                 
                 <p className="text-lg md:text-2xl font-light text-gray-400 max-w-xl leading-relaxed">
                     Ingénieur d&apos;État <strong className="text-white font-medium">Génie Mécanique</strong>.
-                    <br/><span className="font-mono text-xs md:text-sm text-gray-500 uppercase tracking-wide block mt-2">Spécialisation Productique & Aéronautique</span>
+                    <br/><span className="font-mono text-xs md:text-sm text-gray-500 uppercase tracking-wide block mt-2">Spécialiste en fabrication et usinage CNC | Simulation et modélisation numérique | Usinage de précision | Automatisation et programmation Python </span>
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
